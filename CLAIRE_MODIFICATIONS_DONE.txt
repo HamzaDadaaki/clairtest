@@ -1,0 +1,45 @@
+Claire Stefanich Arts Laravel Website - Modifications Completed
+
+Public website:
+- Header updated to: Home, Arts / Shop, Prints, Contact, About Me, Testimonials, Instagram, TikTok, Cart.
+- Home page reorganized into: Hero, Choose Your Path, Latest Originals, Commission preview button, Print-on-Demand preview, one featured testimonial, Join Email List.
+- Removed commission request form from home. Home now links to the dedicated Commissions page.
+- Added dedicated Prints page at /prints.
+- Added dedicated Commissions page at /commissions.
+- Added dedicated Testimonials page at /testimonials.
+- Arts / Shop page supports category filters and pagination.
+- Categories now include Originals, Prints, Commission Examples, and Sold Products filter.
+- Single product page supports multiple product images/gallery and add-to-cart for available products.
+- Email list form saves subscribers to the admin panel.
+
+Admin panel:
+- Admin remains at /admin with login at /admin/login.
+- Default admin password is controlled by CLARA_ADMIN_PASSWORD in .env. Default: claire2026.
+- Admin dashboard expanded with quick navigation and stats.
+- Product manager now supports category, status, button label, featured flag, multiple image upload, edit, and delete.
+- Added Printful sync section. Add PRINTFUL_API_KEY to .env, then click Sync Printful.
+- Added orders section with payment and fulfillment status editing.
+- Added commissions/messages inbox section.
+- Added testimonials manager with image upload and homepage featured option.
+- Added email subscribers list and CSV export.
+- Added store settings for email, currency, Instagram, TikTok.
+
+Checkout / integrations:
+- Cart and checkout now use Claire's artwork repository, not the old Afayar catalog.
+- Stripe checkout support added through STRIPE_SECRET_KEY in .env.
+- If Stripe keys are missing, orders are saved locally in admin without breaking the website.
+- Printful product sync support added through PRINTFUL_API_KEY in .env.
+- Printful fulfillment is prepared but real fulfillment still needs variant mapping after Claire's actual Printful products/API key are available.
+
+Important .env keys:
+CLARA_ADMIN_PASSWORD=claire2026
+STORE_CURRENCY=usd
+STRIPE_PUBLISHABLE_KEY=
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
+PRINTFUL_API_KEY=
+
+Tested:
+- Public pages checked: /, /arts, /prints, /commissions, /testimonials, /cart, /admin/login.
+- Admin login checked with default password.
+- PHP syntax checked for changed controllers, services, repository, and routes.

@@ -1,0 +1,31 @@
+Claire Website — Admin V3 Kimi Style + Printful SSL Fix
+
+What changed in this version:
+
+1. Admin panel design rebuilt to match the Kimi admin panel style:
+   - Cream admin background
+   - White left sidebar
+   - Claire Studio / Admin Panel brand block
+   - Rounded cards
+   - Coral/bronze gradient active buttons
+   - Separate tab-style sections:
+     Originals, Printful Prints, Commissions, Orders, Testimonials, Email List, Messages, Settings
+   - Kimi-style login card with gradient background and password visibility button
+
+2. Printful cURL error 60 fix:
+   - Added PRINTFUL_SSL_VERIFY=false for local Windows/PHP development.
+   - Added safer Printful HTTP client with timeout, retry, and SSL verify option.
+   - Added friendly error message instead of the long raw cURL error.
+
+Important local command after changing .env:
+
+php artisan config:clear
+php artisan cache:clear
+
+For local testing:
+PRINTFUL_SSL_VERIFY=false
+
+For real online hosting/production:
+PRINTFUL_SSL_VERIFY=true
+
+Do not remove your PRINTFUL_API_KEY. Keep it in .env.

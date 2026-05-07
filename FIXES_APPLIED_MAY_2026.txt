@@ -1,0 +1,23 @@
+Claire Stefanich Arts - May 2026 final cleanup
+
+Applied fixes:
+- Shop page now stays focused on original artworks and sold original pieces only.
+- Printful products stay in the Prints page and no longer appear as shop products.
+- Single product buttons are centered.
+- Print product single pages now use the Printful cart route instead of the local artwork cart route.
+- Printful sync logic now fetches product details/variants and stores the real retail price or precise variant price range when the API is reachable.
+- Printful orders now use a stored sync_variant_id/default_variant_id instead of incorrectly using the product ID as a variant ID.
+- Homepage title boxes were widened.
+- Homepage commissions section remains below prints.
+- Email list form now has required Name then Email fields.
+- Admin page titles/headings are forced to plain dark text, no gradient/background text effect.
+- Admin orders include a visible Remove order action.
+- Removed the extra Prints page note/how-it-works style block.
+- Header social/cart icons are transparent/no-background and aligned visually.
+- Button text font changed to Cormorant Garamond.
+- Product mini title “Print” is centered on print cards.
+- Footer “Arts / Shop” label changed to “Shop”.
+
+Notes:
+- The ZIP intentionally excludes vendor and node_modules. Run composer install and npm install after extracting.
+- The local environment here could not reach Printful (connection refused), so exact live prices will populate after pressing Sync Printful on a machine/server with internet access and a valid PRINTFUL_API_KEY.
